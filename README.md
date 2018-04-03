@@ -22,7 +22,7 @@ A hapi plugin that gracefully stops the hapi server on `SIGINT`.
 
 This serves existing requests before closing the connection and stopping the hapi server process.
 
-It uses hapi's `server.stop()` method to close connections properly.
+It uses hapi’s `server.stop()` method to close connections properly.
 
 
 ## Requirements
@@ -61,7 +61,7 @@ await server.register({
 
 
 ## Plugin Registration Options
-`hapi-pm2-zero-downtime` passes the options through to [hapi's `server.stop(options)`](https://hapijs.com/api#-await-serverstopoptions).
+`hapi-pm2-zero-downtime` passes the options through to hapi’s [`server.stop(options)`](https://hapijs.com/api#-await-serverstopoptions).
 This way, customize the behavior of `server.stop()`, like the `timeout` before forcefully stopping the process.
 
 
