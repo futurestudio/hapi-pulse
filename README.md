@@ -1,4 +1,5 @@
 <p align="center">
+  <img height="256" src="https://raw.githubusercontent.com/fs-opensource/hapi-pm2-zero-downtime/master/media/hapi-pm2-zero-downtime.png" alt="hapi-pm2-zero-downtime logo">
 </p>
 
 <p align="center">
