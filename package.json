@@ -1,0 +1,51 @@
+{
+  "name": "hapi-pm2-zero-downtime",
+  "description": "hapi plugin that gracefully stops the hapi server on SIGINT",
+  "version": "0.0.0",
+  "author": "Future Studio <info@futurestud.io>",
+  "bugs": {
+    "url": "https://github.com/fs-opensource/hapi-pm2-zero-downtime/issues"
+  },
+  "devDependencies": {
+    "code": "~5.2.0",
+    "eslint-config-standard": "~11.0.0",
+    "eslint-plugin-import": "~2.10.0",
+    "eslint-plugin-node": "~6.0.1",
+    "eslint-plugin-promise": "~3.7.0",
+    "eslint-plugin-standard": "~3.0.1",
+    "hapi": "~17.3.1",
+    "hoek": "~5.0.3",
+    "husky": "~0.14.3",
+    "lab": "~15.4.1"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "homepage": "https://github.com/fs-opensource/hapi-pm2-zero-downtime#readme",
+  "keywords": [
+    "developer",
+    "hapi",
+    "hapijs",
+    "hapi.js",
+    "plugin",
+    "pm2",
+    "hapi pm2",
+    "hapi graceful",
+    "hapi pm2 graceful",
+    "hapi pm2 graceful restart",
+    "hapi pm2 graceful server restart"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fs-opensource/hapi-pm2-zero-downtime.git"
+  },
+  "scripts": {
+    "test": "lab --assert code --leaks --coverage --lint",
+    "prepush": "npm test"
+  },
+  "dependencies": {
+    "sinon": "~4.5.0"
+  }
+}
