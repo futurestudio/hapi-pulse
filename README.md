@@ -18,7 +18,9 @@ Join the <a href="https://futurestud.io/university">Future Studio University and
 
 
 ## Introduction
-A hapi plugin that gracefully stops the hapi server on `SIGINT`. This will serve existing connections before closing the socket and stopping the hapi server process.
+A hapi plugin that gracefully stops the hapi server on `SIGINT`.
+
+This serves existing requests before closing the connection and stopping the hapi server process.
 
 It uses hapi's `server.stop()` method to close connections properly.
 
