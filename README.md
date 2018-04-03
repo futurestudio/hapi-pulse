@@ -18,7 +18,7 @@ Join the <a href="https://futurestud.io/university">Future Studio University and
 
 
 ## Introduction
-A hapi plugin that gracefully stops the hapi server on `SIGINT`.
+A hapi plugin that gracefully stops the hapi server on `SIGINT`. This is a great combination with **PM2** to accomplish zero-downtime deployments!
 
 This serves existing requests before closing the connection and stopping the hapi server process.
 
