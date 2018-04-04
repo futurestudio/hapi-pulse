@@ -1,10 +1,10 @@
 {
-  "name": "hapi-pm2-zero-downtime",
+  "name": "hapi-pulse",
   "description": "hapi plugin that gracefully stops the hapi server on SIGINT",
   "version": "0.0.0",
   "author": "Future Studio <info@futurestud.io>",
   "bugs": {
-    "url": "https://github.com/fs-opensource/hapi-pm2-zero-downtime/issues"
+    "url": "https://github.com/fs-opensource/hapi-pulse/issues"
   },
   "devDependencies": {
     "code": "~5.2.0",
@@ -21,7 +21,7 @@
   "engines": {
     "node": ">=8.0.0"
   },
-  "homepage": "https://github.com/fs-opensource/hapi-pm2-zero-downtime#readme",
+  "homepage": "https://github.com/fs-opensource/hapi-pulse#readme",
   "keywords": [
     "developer",
     "hapi",
@@ -39,7 +39,7 @@
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fs-opensource/hapi-pm2-zero-downtime.git"
+    "url": "git+https://github.com/fs-opensource/hapi-pulse.git"
   },
   "scripts": {
     "test": "lab --assert code --leaks --coverage --lint",
