@@ -2,27 +2,32 @@
 
 const Lab = require('lab')
 const Code = require('code')
-const Hapi = require('hapi')
 const Hoek = require('hoek')
 const Sinon = require('sinon')
+const Plugin = require('../lib/index').plugin
 
-const server = new Hapi.Server()
-
-const { describe, it, before, after } = (exports.lab = Lab.script())
+const { describe, it, beforeEach, afterEach } = (exports.lab = Lab.script())
 
 describe('server stop on SIGINT,', () => {
-  before(async () => {
-    await server.register({
-      plugin: require('../lib/index')
-    })
+  // fake the hapi server to not stub all internal hapi methods related to server.stop
+  let server = {
+    stop: function () {}
+  }
 
+  beforeEach(async () => {
     // stub process.exit to keep the Node.js process alive while running the tests
     // else it would actually EXIT the process
     Sinon.stub(process, 'exit')
+
+    // stub server.stop for assertions
+    Sinon.stub(server, 'stop')
+
+    return Plugin.register(server)
   })
 
-  after(() => {
+  afterEach(() => {
     process.exit.restore()
+    server.stop.restore()
   })
 
   it('should listen for the SIGINT event', async () => {
@@ -33,14 +38,19 @@ describe('server stop on SIGINT,', () => {
   })
 
   it('stops the server on SIGINT', async () => {
-    await server.start()
     process.emit('SIGINT')
 
-    // wait for the hapi server to stop
-    await Hoek.wait(100)
-    Sinon.assert.called(process.exit)
+    // wait for the server to stop
+    await Hoek.wait(10)
 
-    // a stopped hapi server has a "started" timestamp of 0
-    Code.expect(server.info.started).to.equal(0)
+    Sinon.assert.called(server.stop)
+    Sinon.assert.called(process.exit)
+  })
+
+  it('does not stop the server on other event', async () => {
+    process.emit('EVENT')
+
+    Sinon.assert.notCalled(server.stop)
+    Sinon.assert.notCalled(process.exit)
   })
 })
