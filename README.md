@@ -10,7 +10,7 @@
 
 ------
 
-<p align="center"><sup>Development of this hapi plugin is supported by <a href="https://futurestud.io">Future Studio University 🚀</a></sup>
+<p align="center"><sup>The <a href="https://futurestud.io">Future Studio University</a> supports development of this hapi plugin 🚀</sup>
 <br><b>
 Join the <a href="https://futurestud.io/university">Future Studio University and Skyrocket in Node.js</a></b>
 </p>
@@ -40,20 +40,17 @@ npm i hapi-pulse
 
 # you’re using NPM v4:
 npm i -S hapi-pulse
-
 ```
 
 
 ## Usage
-**`hapi-pulse` is enabled by default.**
-
 The most straight forward way to register the `hapi-pulse` plugin:
 
 ```js
 await server.register({
   plugin: require('hapi-pulse'),
   options: {
-    // any option that is supported by hapi's "server.stop()", e.g.
+    // any option that is supported by hapi's "server.stop()"
     timeout: 15000
   }
 })
@@ -62,7 +59,7 @@ await server.register({
 
 ## Plugin Registration Options
 `hapi-pulse` passes the options through to hapi’s [`server.stop(options)`](https://hapijs.com/api#-await-serverstopoptions).
-This way, customize the behavior of `server.stop()`, like the `timeout` before forcefully stopping the process.
+Customize the behavior of `server.stop()`, like the `timeout` before forcefully stopping the process.
 
 
 ## Feature Requests
