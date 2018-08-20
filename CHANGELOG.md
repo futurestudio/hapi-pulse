@@ -10,6 +10,10 @@
 
 ### Added
 - graceful server stop on `SIGTERM`
+- `signals` option: define the list of signals you want your server to stop
+- `onSignal` option: custom function with additional shutdown handling, called after `server.stop`
+
+### Updated
 - minor README updates
 
 
