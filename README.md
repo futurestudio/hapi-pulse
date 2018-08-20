@@ -36,7 +36,9 @@ Join the <a href="https://futurestud.io/university">Future Studio University and
 
 
 ## Introduction
-A hapi plugin that gracefully stops the hapi server on `SIGINT` and `SIGTERM`. `hapi-pulse` works great with **PM2** and other Node.js process manager to accomplish zero-downtime deployments!
+A hapi plugin that gracefully stops the hapi server on `SIGINT` and `SIGTERM`.
+
+`hapi-pulse` works great with **PM2** and other Node.js process manager to accomplish zero-downtime deployments!
 
 This serves existing requests before closing the connection and stopping the hapi server process.
 It uses hapi’s `server.stop()` method to close connections properly.
