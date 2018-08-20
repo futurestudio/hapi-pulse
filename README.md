@@ -80,6 +80,27 @@ await server.register({
 `hapi-pulse` passes the options through to hapi’s [`server.stop(options)`](https://hapijs.com/api#-await-serverstopoptions).
 Customize the behavior of `server.stop()`, like the `timeout` before forcefully stopping the process.
 
+Additionally, you can pass along the following options:
+
+- **signals**: `(array)`, default: `['SIGINT', 'SIGTERM']` — use this `signals` option to customize the events on which hapi-pulse will stop the server
+- **onSignal**: `(function)`, default: `undefined` — define a custom function that you want to run after `server.stop()` is called
+
+**Example**
+
+```js
+await server.register({
+  plugin: require('hapi-pulse'),
+  options: {
+    signals: ['SIGINT'],
+    onSignal: async function () {
+      // this runs after server.stop()
+    }
+  }
+})
+
+// went smooth like chocolate :)
+```
+
 
 ## Feature Requests
 Do you miss a feature? Please don’t hesitate to
