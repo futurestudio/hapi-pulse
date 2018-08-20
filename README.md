@@ -1,12 +1,29 @@
-<p align="center">
-  <img height="256" src="https://raw.githubusercontent.com/fs-opensource/hapi-pulse/master/media/hapi-pulse.png" alt="hapi-pulse logo">
-</p>
+<div align="center">
+  <img width="471" style="max-width:100%;" src="https://raw.githubusercontent.com/fs-opensource/hapi-pulse/master/media/hapi-pulse.png" alt="hapi-pulse logo">
 
-<p align="center">
-    <a href="https://travis-ci.org/fs-opensource/hapi-pulse"><img src="https://camo.githubusercontent.com/9f56ef242c6f588f74f39f0bd61c1acd34d853af/68747470733a2f2f7472617669732d63692e6f72672f66732d6f70656e736f757263652f686170692d67656f2d6c6f636174652e7376673f6272616e63683d6d6173746572" alt="Build Status" data-canonical-src="https://travis-ci.org/fs-opensource/hapi-pulse.svg?branch=master" style="max-width:100%;"></a>
+  <br/>
+  <br/>
+
+  <p>
+    hapi plugin to gracefully stop your hapi server
+  </p>
+  <br/>
+  <p>
+    <a href="#installation"><strong>Installation</strong></a> ·
+    <a href="#usage"><strong>Usage</strong></a> ·
+    <a href="#plugin-registration-options"><strong>Plugin Options</strong></a>
+  </p>
+  <br/>
+  <br/>
+  <p>
+     <a href="https://travis-ci.org/fs-opensource/hapi-pulse"><img src="https://camo.githubusercontent.com/9f56ef242c6f588f74f39f0bd61c1acd34d853af/68747470733a2f2f7472617669732d63692e6f72672f66732d6f70656e736f757263652f686170692d67656f2d6c6f636174652e7376673f6272616e63683d6d6173746572" alt="Build Status" data-canonical-src="https://travis-ci.org/fs-opensource/hapi-pulse.svg?branch=master" style="max-width:100%;"></a>
     <a href="https://snyk.io/test/github/fs-opensource/hapi-pulse"><img src="https://snyk.io/test/github/fs-opensource/hapi-pulse/badge.svg" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/fs-opensource/hapi-pulse" style="max-width:100%;"></a>
     <a href="https://www.npmjs.com/package/hapi-pulse"><img src="https://img.shields.io/npm/v/hapi-pulse.svg" alt="hapi-pulse Version" data-canonical-src="https://img.shields.io/npm/v/hapi-pulse.svg" style="max-width:100%;"></a>
-</p>
+  </p>
+  <p>
+    <em>Follow <a href="http://twitter.com/marcuspoehls">@marcuspoehls</a> for updates!</em>
+  </p>
+</div>
 
 ------
 
