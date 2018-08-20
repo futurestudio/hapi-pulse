@@ -10,12 +10,12 @@ const server = new Hapi.Server()
 
 const { describe, it, before, beforeEach, afterEach } = (exports.lab = Lab.script())
 
-describe('server stop on SIGINT,', () => {
+describe('server stop on SIGTERM,', () => {
   before(async () => {
-    process.removeAllListeners('SIGINT')
+    process.removeAllListeners('SIGTERM')
 
     await server.register({
-      plugin: require('../lib/index')
+      plugin: require('../lib')
     })
   })
 
@@ -29,19 +29,19 @@ describe('server stop on SIGINT,', () => {
     process.exit.restore()
   })
 
-  it('should listen for the SIGINT event', async () => {
-    const listeners = process.listeners('SIGINT')
+  it('should listen for the SIGTERM event', async () => {
+    const listeners = process.listeners('SIGTERM')
 
     Code.expect(listeners).to.exist()
     Code.expect(listeners.length).to.equal(1)
   })
 
-  it('stops the server on SIGINT', async () => {
+  it('stops the server on SIGTERM', async () => {
     await server.start()
     // a stopped hapi server has a "started" timestamp of 0
     Code.expect(server.info.started).to.not.equal(0)
 
-    process.emit('SIGINT')
+    process.emit('SIGTERM')
 
     // wait for the server to stop
     await Hoek.wait(100)
