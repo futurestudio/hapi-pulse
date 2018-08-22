@@ -82,8 +82,9 @@ Customize the behavior of `server.stop()`, like the `timeout` before forcefully 
 
 Additionally, you can pass along the following options:
 
-- **signals**: `(array)`, default: `['SIGINT', 'SIGTERM']` — use this `signals` option to customize the events on which hapi-pulse will stop the server
-- **onSignal**: `(function)`, default: `undefined` — define a custom function that you want to run after `server.stop()` is called
+- **logger**: `(Object)`, default: `console` — in case of an error, hapi-pulse logs the error with `logger.error('message', error)`
+- **signals**: `(Array)`, default: `['SIGINT', 'SIGTERM']` — use this `signals` option to customize the events on which hapi-pulse will stop the server
+- **onSignal**: `(Function)`, default: `undefined` — define a custom function that you want to run after `server.stop()` is called
 
 **Example**
 
@@ -91,6 +92,7 @@ Additionally, you can pass along the following options:
 await server.register({
   plugin: require('hapi-pulse'),
   options: {
+    logger: console,
     signals: ['SIGINT'],
     onSignal: async function () {
       // this runs after server.stop()

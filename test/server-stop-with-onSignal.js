@@ -17,12 +17,12 @@ describe('server stop with onSignal:', () => {
     // stub process.exit to keep the Node.js process alive while running the tests
     // else it would actually EXIT the process
     Sinon.stub(process, 'exit')
-    Sinon.stub(console, 'log')
+    Sinon.stub(console, 'error')
   })
 
   afterEach(() => {
     process.exit.restore()
-    console.log.restore()
+    console.error.restore()
   })
 
   it('should call onSignal after stopping the server on SIGINT', async () => {
@@ -59,6 +59,7 @@ describe('server stop with onSignal:', () => {
     await server.register({
       plugin: require('../lib'),
       options: {
+        logger: console,
         onSignal: stub
       }
     })
@@ -71,7 +72,7 @@ describe('server stop with onSignal:', () => {
     await Hoek.wait(100)
 
     Sinon.assert.called(process.exit)
-    Sinon.assert.called(console.log)
+    Sinon.assert.called(console.error)
     Sinon.assert.called(stub)
 
     // a stopped hapi server has a "started" timestamp of 0
