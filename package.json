@@ -16,7 +16,8 @@
     "hapi": "~17.3.1",
     "hoek": "~5.0.3",
     "husky": "~0.14.3",
-    "lab": "~15.4.1"
+    "lab": "~15.4.1",
+    "sinon": "~4.5.0"
   },
   "engines": {
     "node": ">=8.0.0"
@@ -25,15 +26,15 @@
   "keywords": [
     "developer",
     "hapi",
-    "hapijs",
-    "hapi.js",
-    "plugin",
-    "pm2",
-    "hapi pm2",
     "hapi graceful",
+    "hapi pm2",
     "hapi pm2 graceful",
     "hapi pm2 graceful restart",
-    "hapi pm2 graceful server restart"
+    "hapi pm2 graceful server restart",
+    "hapi.js",
+    "hapijs",
+    "plugin",
+    "pm2"
   ],
   "license": "MIT",
   "main": "lib/index.js",
@@ -42,10 +43,7 @@
     "url": "git+https://github.com/fs-opensource/hapi-pulse.git"
   },
   "scripts": {
-    "test": "lab --assert code --leaks --coverage --lint",
-    "prepush": "npm test"
-  },
-  "dependencies": {
-    "sinon": "~4.5.0"
+    "prepush": "npm test",
+    "test": "lab --assert code --leaks --coverage --lint"
   }
 }
