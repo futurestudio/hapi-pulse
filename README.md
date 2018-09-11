@@ -70,7 +70,14 @@ await server.register({
   plugin: require('hapi-pulse'),
   options: {
     // any option that is supported by hapi's "server.stop()"
-    timeout: 15000
+    timeout: 15000,
+
+    // plugin specific options
+    logger: console,
+    signals: ['SIGINT'],
+    onSignal: async function () {
+      // await Database.close()
+    }
   }
 })
 ```
@@ -84,7 +91,8 @@ Additionally, you can pass along the following options:
 
 - **logger**: `(Object)`, default: `console` — in case of an error, hapi-pulse logs the error with `logger.error('message', error)`
 - **signals**: `(Array)`, default: `['SIGINT', 'SIGTERM']` — use this `signals` option to customize the events on which hapi-pulse will stop the server
-- **onSignal**: `(Function)`, default: `undefined` — define a custom function that you want to run after `server.stop()` is called
+- **onSignal**: `(Function)`, default: `noop (=Promise.resolve)` — define a custom function that you want to run after `server.stop()` is called
+- **timeout**: `(int)`, default: `5000 (5 seconds)` — the timeout existing connections should be closed until they are forcefully interrupted. This option is passed through to hapi’s `server.stop()`
 
 **Example**
 
@@ -92,10 +100,12 @@ Additionally, you can pass along the following options:
 await server.register({
   plugin: require('hapi-pulse'),
   options: {
+    timeout: 25 * 1000,
     logger: console,
     signals: ['SIGINT'],
     onSignal: async function () {
       // this runs after server.stop()
+      // e.g., await Database.close()
     }
   }
 })
