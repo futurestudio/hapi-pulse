@@ -6,6 +6,14 @@
 - tba.
 
 
+## [1.1.1](https://github.com/fs-opensource/hapi-pulse/compare/v1.1.0...v1.1.1) - 2018-09-11
+
+### Updated
+- split plugin and hapi server options
+- extract plugin options and pass through the rest to hapi’s `await server.stop(rest)`
+- update readme: add examples and `timeout` option (passed through to hapi)
+
+
 ## [1.1.0](https://github.com/fs-opensource/hapi-pulse/compare/v1.0.0...v1.1.0) - 2018-08-20
 
 ### Added
