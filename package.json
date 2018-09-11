@@ -13,11 +13,11 @@
     "eslint-plugin-node": "~6.0.1",
     "eslint-plugin-promise": "~3.7.0",
     "eslint-plugin-standard": "~3.0.1",
-    "hapi": "~17.3.1",
+    "hapi": "~17.5.4",
     "hoek": "~5.0.3",
     "husky": "~0.14.3",
-    "lab": "~15.4.1",
-    "sinon": "~4.5.0"
+    "lab": "~16.1.0",
+    "sinon": "~6.2.0"
   },
   "engines": {
     "node": ">=8.0.0"
