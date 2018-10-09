@@ -12,8 +12,6 @@ const { describe, it, before, beforeEach, afterEach } = (exports.lab = Lab.scrip
 
 describe('server stop on SIGTERM,', () => {
   before(async () => {
-    process.removeAllListeners('SIGTERM')
-
     await server.register({
       plugin: require('../lib')
     })
