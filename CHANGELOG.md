@@ -6,6 +6,22 @@
 - tba.
 
 
+## [2.0.0](https://github.com/fs-opensource/hapi-pulse/compare/v1.1.1...v2.0.0) - 2018-10-xx
+
+### Added
+- new extension points:
+  - `preServerStop`: async function that runs before the server stop
+  - `postServerStop`: async function that runs after the server stop (this was previously `onSignal`)
+  - `preShutdown`: async function that runs before the process exits
+
+### Updated
+- the `onSignal` extension point is now called `postServerStop`
+
+
+### Breaking Changes
+- `onSignal` becomes `postServerStop`: this renaming makes it clear when the function gets called
+
+
 ## [1.1.1](https://github.com/fs-opensource/hapi-pulse/compare/v1.1.0...v1.1.1) - 2018-09-11
 
 ### Added
