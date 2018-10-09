@@ -6,13 +6,9 @@ const Hapi = require('hapi')
 const Hoek = require('hoek')
 const Sinon = require('sinon')
 
-const { describe, it, before, beforeEach, afterEach } = (exports.lab = Lab.script())
+const { describe, it, beforeEach, afterEach } = (exports.lab = Lab.script())
 
 describe('server stop with onSignal:', () => {
-  before(async () => {
-    process.removeAllListeners('SIGINT')
-  })
-
   beforeEach(async () => {
     // stub process.exit to keep the Node.js process alive while running the tests
     // else it would actually EXIT the process
