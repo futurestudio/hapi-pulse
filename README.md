@@ -75,7 +75,7 @@ await server.register({
     // plugin specific options
     logger: console,
     signals: ['SIGINT'],
-    onSignal: async function () {
+    postServerStop: async function () {
       // await Database.close()
     }
   }
@@ -91,7 +91,9 @@ Additionally, you can pass along the following options:
 
 - **logger**: `(Object)`, default: `console` — in case of an error, hapi-pulse logs the error with `logger.error('message', error)`
 - **signals**: `(Array)`, default: `['SIGINT', 'SIGTERM']` — use this `signals` option to customize the events on which hapi-pulse will stop the server
-- **onSignal**: `(Function)`, default: `noop (=Promise.resolve)` — define a custom function that you want to run after `server.stop()` is called
+- **preServerStop**: `(Function)`, default: `Promise.resolve` — an async function that runs before `server.stop()`
+- **postServerStop**: `(Function)`, default: `Promise.resolve` — an async function that runs after `server.stop()`
+- **preShutdown**: `(Function)`, default: `Promise.resolve` — an async function that runs after `postServerStop()` and before `process.exit`
 - **timeout**: `(int)`, default: `5000 (5 seconds)` — the timeout existing connections should be closed until they are forcefully interrupted. This option is passed through to hapi’s `server.stop()`
 
 **Example**
@@ -102,10 +104,16 @@ await server.register({
   options: {
     timeout: 25 * 1000,
     logger: console,
-    signals: ['SIGINT'],
-    onSignal: async function () {
+    signals: ['SIGINT', 'SIGTERM'],
+    preServerStop: async function () {
+      // this runs before server.stop()
+    },
+    postServerStop: async function () {
       // this runs after server.stop()
       // e.g., await Database.close()
+    },
+    preShutdown: async function () {
+      // this runs after postServerStop() and before process.exit
     }
   }
 })
