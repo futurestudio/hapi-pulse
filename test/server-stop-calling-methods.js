@@ -21,14 +21,18 @@ describe('server stop with onSignal:', () => {
     console.error.restore()
   })
 
-  it('should call onSignal after stopping the server on SIGINT', async () => {
+  it('should call postServerStop after stopping the server on SIGINT', async () => {
     const stub = Sinon.stub().returns(Hoek.wait(1))
+    const stub2 = Sinon.stub().returns(Hoek.wait(1))
+    const stub3 = Sinon.stub().returns(Hoek.wait(1))
 
     const server = new Hapi.Server()
     await server.register({
       plugin: require('../lib'),
       options: {
-        onSignal: stub
+        preServerStop: stub,
+        postServerStop: stub2,
+        preShutdown: stub3
       }
     })
 
@@ -43,6 +47,8 @@ describe('server stop with onSignal:', () => {
 
     Sinon.assert.called(process.exit)
     Sinon.assert.called(stub)
+    Sinon.assert.called(stub2)
+    Sinon.assert.called(stub3)
 
     // a stopped hapi server has a "started" timestamp of 0
     Code.expect(server.info.started).to.equal(0)
@@ -56,7 +62,7 @@ describe('server stop with onSignal:', () => {
       plugin: require('../lib'),
       options: {
         logger: console,
-        onSignal: stub
+        postServerStop: stub
       }
     })
 
