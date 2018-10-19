@@ -16,6 +16,7 @@
 
 ### Updated
 - the `onSignal` extension point is now called `postServerStop`
+- remove all process listeners before exiting the process (to avoid memory leaks)
 - bump dependencies
 - add missing `eslint` devDependency
 
