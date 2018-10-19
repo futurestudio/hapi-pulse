@@ -6,7 +6,7 @@
 - tba.
 
 
-## [2.0.0](https://github.com/fs-opensource/hapi-pulse/compare/v1.1.1...v2.0.0) - 2018-10-xx
+## [2.0.0](https://github.com/fs-opensource/hapi-pulse/compare/v1.1.1...v2.0.0) - 2018-10-19
 
 ### Added
 - new extension points:
@@ -16,10 +16,15 @@
 
 ### Updated
 - the `onSignal` extension point is now called `postServerStop`
+- bump dependencies
+- add missing `eslint` devDependency
+
+### Deleted
+- removed useless `.prettierignore` file
 
 
 ### Breaking Changes
-- `onSignal` becomes `postServerStop`: this renaming makes it clear when the function gets called
+- `onSignal` becomes `postServerStop`: the method renaming makes it clear when the function gets called
 
 
 ## [1.1.1](https://github.com/fs-opensource/hapi-pulse/compare/v1.1.0...v1.1.1) - 2018-09-11
