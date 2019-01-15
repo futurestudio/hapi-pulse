@@ -24,7 +24,7 @@ describe('server stop with custom signals:', () => {
     await server.register({
       plugin: require('../lib'),
       options: {
-        signals: ['HAPIPULSE']
+        signals: 'HAPIPULSE'
       }
     })
 
@@ -41,20 +41,5 @@ describe('server stop with custom signals:', () => {
 
     // a stopped hapi server has a "started" timestamp of 0
     Code.expect(server.info.started).to.equal(0)
-  })
-
-  it('throws if value for signals option is not an array', async () => {
-    const server = new Hapi.Server()
-    try {
-      await server.register({
-        plugin: require('../lib'),
-        options: {
-          signals: 'HAPIPULSE'
-        }
-      })
-      Code.expect(true).to.not.exist()
-    } catch (error) {
-      Code.expect(error).to.exist()
-    }
   })
 })

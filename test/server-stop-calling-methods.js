@@ -5,6 +5,7 @@ const Code = require('code')
 const Hapi = require('hapi')
 const Hoek = require('hoek')
 const Sinon = require('sinon')
+const MockIo = require('mock-stdio')
 
 const { describe, it, beforeEach, afterEach } = (exports.lab = Lab.script())
 
@@ -13,12 +14,10 @@ describe('server stop with onSignal:', () => {
     // stub process.exit to keep the Node.js process alive while running the tests
     // else it would actually EXIT the process
     Sinon.stub(process, 'exit')
-    Sinon.stub(console, 'error')
   })
 
   afterEach(() => {
     process.exit.restore()
-    console.error.restore()
   })
 
   it('should call postServerStop after stopping the server on SIGINT', async () => {
@@ -54,14 +53,14 @@ describe('server stop with onSignal:', () => {
     Code.expect(server.info.started).to.equal(0)
   })
 
-  it('exits the process with status 1 if an error occurs', async () => {
+  it('exits the process with status 1 on error with default logger', async () => {
     const stub = Sinon.stub().throws(new Error('fake error from sinon'))
 
     const server = new Hapi.Server()
     await server.register({
       plugin: require('../lib'),
       options: {
-        logger: console,
+        logger: { error: () => {} },
         postServerStop: stub
       }
     })
@@ -74,8 +73,36 @@ describe('server stop with onSignal:', () => {
     await Hoek.wait(100)
 
     Sinon.assert.called(process.exit)
-    Sinon.assert.called(console.error)
     Sinon.assert.called(stub)
+
+    // a stopped hapi server has a "started" timestamp of 0
+    Code.expect(server.info.started).to.equal(0)
+  })
+
+  it('exits the process with status 1 on error with default console.error logger', async () => {
+    MockIo.start()
+    const stub = Sinon.stub().throws(new Error('fake error from sinon'))
+
+    const server = new Hapi.Server()
+    await server.register({
+      plugin: require('../lib'),
+      options: {
+        postServerStop: stub
+      }
+    })
+
+    await server.start()
+
+    process.emit('SIGINT')
+
+    // wait for the server to stop
+    await Hoek.wait(100)
+
+    Sinon.assert.called(process.exit)
+    Sinon.assert.called(stub)
+
+    const { stderr } = MockIo.end()
+    Code.expect(stderr).to.include('fake error from sinon')
 
     // a stopped hapi server has a "started" timestamp of 0
     Code.expect(server.info.started).to.equal(0)
