@@ -13,7 +13,7 @@ const { describe, it, before, beforeEach, afterEach } = (exports.lab = Lab.scrip
 describe('server stop on SIGINT,', () => {
   before(async () => {
     await server.register({
-      plugin: require('../lib/index')
+      plugin: require('../lib')
     })
   })
 

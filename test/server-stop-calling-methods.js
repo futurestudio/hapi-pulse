@@ -61,16 +61,18 @@ describe('server stop with onSignal:', () => {
       plugin: require('../lib'),
       options: {
         logger: { error: () => {} },
+        signals: 'ERRORPULSE',
         postServerStop: stub
       }
     })
 
     await server.start()
 
-    process.emit('SIGINT')
+    process.emit('ERRORPULSE')
 
     // wait for the server to stop
     await Hoek.wait(100)
+    Code.expect(process.listenerCount('ERRORPULSE')).to.equal(0)
 
     Sinon.assert.called(process.exit)
     Sinon.assert.called(stub)
@@ -87,16 +89,18 @@ describe('server stop with onSignal:', () => {
     await server.register({
       plugin: require('../lib'),
       options: {
+        signals: 'ERRORPULSE',
         postServerStop: stub
       }
     })
 
     await server.start()
 
-    process.emit('SIGINT')
+    process.emit('ERRORPULSE')
 
     // wait for the server to stop
     await Hoek.wait(100)
+    Code.expect(process.listenerCount('ERRORPULSE')).to.equal(0)
 
     Sinon.assert.called(process.exit)
     Sinon.assert.called(stub)
