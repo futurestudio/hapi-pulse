@@ -6,6 +6,9 @@
   "bugs": {
     "url": "https://github.com/fs-opensource/hapi-pulse/issues"
   },
+  "dependencies": {
+    "joi": "~14.3.1"
+  },
   "devDependencies": {
     "code": "~5.2.4",
     "eslint": "~5.12.0",
