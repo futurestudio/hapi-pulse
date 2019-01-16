@@ -1,9 +1,13 @@
 # Changelog
 
-## [Unreleased]
+## [2.1.0](https://github.com/fs-opensource/hapi-pulse/compare/v2.0.0...v2.1.0) - 2019-01-xx
 
-### Changed
-- tba.
+### Added
+- validating the plugin `options` using Joi
+
+### Updated
+- refactor code to a class based structure
+- refactor methods and namings
 
 
 ## [2.0.0](https://github.com/fs-opensource/hapi-pulse/compare/v1.1.1...v2.0.0) - 2018-10-19
