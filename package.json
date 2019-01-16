@@ -1,7 +1,7 @@
 {
   "name": "hapi-pulse",
   "description": "hapi plugin that gracefully stops the hapi server on SIGINT",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "author": "Future Studio <info@futurestud.io>",
   "bugs": {
     "url": "https://github.com/fs-opensource/hapi-pulse/issues"
