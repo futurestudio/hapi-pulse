@@ -1,6 +1,13 @@
 # Changelog
 
-## [2.1.0](https://github.com/fs-opensource/hapi-pulse/compare/v2.0.0...v2.1.0) - 2019-01-xx
+## [2.1.1](https://github.com/fs-opensource/hapi-pulse/compare/v2.1.0...v2.1.1) - 2019-01-22
+
+### Updated
+- test plugin for hapi 18
+- bump dependencies
+
+
+## [2.1.0](https://github.com/fs-opensource/hapi-pulse/compare/v2.0.0...v2.1.0) - 2019-01-16
 
 ### Added
 - validating the plugin `options` using Joi
