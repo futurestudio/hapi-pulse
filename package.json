@@ -4,7 +4,7 @@
   "version": "2.1.1",
   "author": "Future Studio <info@futurestud.io>",
   "bugs": {
-    "url": "https://github.com/fs-opensource/hapi-pulse/issues"
+    "url": "https://github.com/futurestudio/hapi-pulse/issues"
   },
   "dependencies": {
     "joi": "~14.3.1"
@@ -27,7 +27,7 @@
   "engines": {
     "node": ">=8"
   },
-  "homepage": "https://github.com/fs-opensource/hapi-pulse#readme",
+  "homepage": "https://github.com/futurestudio/hapi-pulse#readme",
   "keywords": [
     "developer",
     "hapi",
@@ -45,7 +45,7 @@
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fs-opensource/hapi-pulse.git"
+    "url": "git+https://github.com/futurestudio/hapi-pulse.git"
   },
   "scripts": {
     "prepush": "npm test",

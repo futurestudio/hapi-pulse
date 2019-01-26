@@ -1,13 +1,19 @@
 # Changelog
 
-## [2.1.1](https://github.com/fs-opensource/hapi-pulse/compare/v2.1.0...v2.1.1) - 2019-01-22
+## [2.1.2](https://github.com/futurestudio/hapi-pulse/compare/v2.1.1...v2.1.2) - 2019-01-26
+
+### Updated
+- Readme: rename GitHub references `fs-opensource -> futurestudio`
+
+
+## [2.1.1](https://github.com/futurestudio/hapi-pulse/compare/v2.1.0...v2.1.1) - 2019-01-22
 
 ### Updated
 - test plugin for hapi 18
 - bump dependencies
 
 
-## [2.1.0](https://github.com/fs-opensource/hapi-pulse/compare/v2.0.0...v2.1.0) - 2019-01-16
+## [2.1.0](https://github.com/futurestudio/hapi-pulse/compare/v2.0.0...v2.1.0) - 2019-01-16
 
 ### Added
 - validating the plugin `options` using Joi
@@ -17,7 +23,7 @@
 - refactor methods and namings
 
 
-## [2.0.0](https://github.com/fs-opensource/hapi-pulse/compare/v1.1.1...v2.0.0) - 2018-10-19
+## [2.0.0](https://github.com/futurestudio/hapi-pulse/compare/v1.1.1...v2.0.0) - 2018-10-19
 
 ### Added
 - new extension points:
@@ -39,7 +45,7 @@
 - `onSignal` becomes `postServerStop`: the method renaming makes it clear when the function gets called
 
 
-## [1.1.1](https://github.com/fs-opensource/hapi-pulse/compare/v1.1.0...v1.1.1) - 2018-09-11
+## [1.1.1](https://github.com/futurestudio/hapi-pulse/compare/v1.1.0...v1.1.1) - 2018-09-11
 
 ### Added
 - new option:
@@ -51,7 +57,7 @@
 - update readme: add examples and `timeout` option (passed through to hapi)
 
 
-## [1.1.0](https://github.com/fs-opensource/hapi-pulse/compare/v1.0.0...v1.1.0) - 2018-08-20
+## [1.1.0](https://github.com/futurestudio/hapi-pulse/compare/v1.0.0...v1.1.0) - 2018-08-20
 
 ### Added
 - graceful server stop on `SIGTERM`
