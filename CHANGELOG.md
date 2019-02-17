@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.2.0](https://github.com/futurestudio/hapi-pulse/compare/v2.1.2...v2.2.0) - 2019-02-18
+
+### Added
+- increase max event listener count in case hapi-pulse would exceed it
+- save `server.stop` promise and don’t stop the hapi server more than once
+
+### Updated
+- bump dependencies
+
+
 ## [2.1.2](https://github.com/futurestudio/hapi-pulse/compare/v2.1.1...v2.1.2) - 2019-01-26
 
 ### Updated
