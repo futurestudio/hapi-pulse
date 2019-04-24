@@ -1,10 +1,10 @@
 'use strict'
 
-const Lab = require('lab')
-const Code = require('code')
-const Hapi = require('hapi')
-const Hoek = require('hoek')
 const Sinon = require('sinon')
+const Lab = require('@hapi/lab')
+const Hapi = require('@hapi/hapi')
+const Hoek = require('@hapi/hoek')
+const { expect } = require('@hapi/code')
 
 const server = new Hapi.Server()
 
@@ -30,14 +30,14 @@ describe('server stop on SIGTERM,', () => {
   it('should listen for the SIGTERM event', async () => {
     const listeners = process.listeners('SIGTERM')
 
-    Code.expect(listeners).to.exist()
-    Code.expect(listeners.length).to.equal(1)
+    expect(listeners).to.exist()
+    expect(listeners.length).to.equal(1)
   })
 
   it('stops the server on SIGTERM', async () => {
     await server.start()
     // a stopped hapi server has a "started" timestamp of 0
-    Code.expect(server.info.started).to.not.equal(0)
+    expect(server.info.started).to.not.equal(0)
 
     process.emit('SIGTERM')
 
@@ -46,16 +46,16 @@ describe('server stop on SIGTERM,', () => {
     Sinon.assert.called(process.exit)
 
     // a stopped hapi server has a "started" timestamp of 0
-    Code.expect(server.info.started).to.equal(0)
+    expect(server.info.started).to.equal(0)
   })
 
   it('does not stop the server on other event', async () => {
     await server.start()
-    Code.expect(server.info.started).to.not.equal(0)
+    expect(server.info.started).to.not.equal(0)
 
     process.emit('EVENT')
 
     Sinon.assert.notCalled(process.exit)
-    Code.expect(server.info.started).to.not.equal(0)
+    expect(server.info.started).to.not.equal(0)
   })
 })

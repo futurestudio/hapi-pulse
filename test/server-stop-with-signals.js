@@ -1,10 +1,10 @@
 'use strict'
 
-const Lab = require('lab')
-const Code = require('code')
-const Hapi = require('hapi')
-const Hoek = require('hoek')
 const Sinon = require('sinon')
+const Lab = require('@hapi/lab')
+const Hapi = require('@hapi/hapi')
+const Hoek = require('@hapi/hoek')
+const { expect } = require('@hapi/code')
 
 const { describe, it, beforeEach, afterEach } = (exports.lab = Lab.script())
 
@@ -30,7 +30,7 @@ describe('server stop with custom signals:', () => {
 
     await server.start()
     // a stopped hapi server has a "started" timestamp of 0
-    Code.expect(server.info.started).to.not.equal(0)
+    expect(server.info.started).to.not.equal(0)
 
     process.emit('HAPIPULSE')
 
@@ -40,6 +40,6 @@ describe('server stop with custom signals:', () => {
     Sinon.assert.called(process.exit)
 
     // a stopped hapi server has a "started" timestamp of 0
-    Code.expect(server.info.started).to.equal(0)
+    expect(server.info.started).to.equal(0)
   })
 })

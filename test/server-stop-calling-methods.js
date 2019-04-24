@@ -1,11 +1,11 @@
 'use strict'
 
-const Lab = require('lab')
-const Code = require('code')
-const Hapi = require('hapi')
-const Hoek = require('hoek')
 const Sinon = require('sinon')
+const Lab = require('@hapi/lab')
+const Hapi = require('@hapi/hapi')
+const Hoek = require('@hapi/hoek')
 const MockIo = require('mock-stdio')
+const { expect } = require('@hapi/code')
 
 const { describe, it, beforeEach, afterEach } = (exports.lab = Lab.script())
 
@@ -37,7 +37,7 @@ describe('server stop with onSignal:', () => {
 
     await server.start()
     // a stopped hapi server has a "started" timestamp of 0
-    Code.expect(server.info.started).to.not.equal(0)
+    expect(server.info.started).to.not.equal(0)
 
     process.emit('SIGINT')
 
@@ -50,7 +50,7 @@ describe('server stop with onSignal:', () => {
     Sinon.assert.called(stub3)
 
     // a stopped hapi server has a "started" timestamp of 0
-    Code.expect(server.info.started).to.equal(0)
+    expect(server.info.started).to.equal(0)
   })
 
   it('exits the process with status 1 on error with default logger', async () => {
@@ -72,13 +72,13 @@ describe('server stop with onSignal:', () => {
 
     // wait for the server to stop
     await Hoek.wait(100)
-    Code.expect(process.listenerCount('ERRORPULSE')).to.equal(0)
+    expect(process.listenerCount('ERRORPULSE')).to.equal(0)
 
     Sinon.assert.called(process.exit)
     Sinon.assert.called(stub)
 
     // a stopped hapi server has a "started" timestamp of 0
-    Code.expect(server.info.started).to.equal(0)
+    expect(server.info.started).to.equal(0)
   })
 
   it('exits the process with status 1 on error with default console.error logger', async () => {
@@ -100,15 +100,15 @@ describe('server stop with onSignal:', () => {
 
     // wait for the server to stop
     await Hoek.wait(100)
-    Code.expect(process.listenerCount('ERRORPULSE')).to.equal(0)
+    expect(process.listenerCount('ERRORPULSE')).to.equal(0)
 
     Sinon.assert.called(process.exit)
     Sinon.assert.called(stub)
 
     const { stderr } = MockIo.end()
-    Code.expect(stderr).to.include('fake error from sinon')
+    expect(stderr).to.include('fake error from sinon')
 
     // a stopped hapi server has a "started" timestamp of 0
-    Code.expect(server.info.started).to.equal(0)
+    expect(server.info.started).to.equal(0)
   })
 })
