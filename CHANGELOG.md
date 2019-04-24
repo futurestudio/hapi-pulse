@@ -1,6 +1,6 @@
 # Changelog
 
-## [2.2.1](https://github.com/futurestudio/hapi-pulse/compare/v2.2.0...v2.2.1) - 2019-04-25
+## [2.2.1](https://github.com/futurestudio/hapi-pulse/compare/v2.2.0...v2.2.1) - 2019-04-24
 
 ### Updated
 - updating to the scoped hapi dependencies
