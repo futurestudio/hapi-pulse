@@ -22,11 +22,14 @@ describe('server stop with custom signals:', () => {
   it('increases the max listeners count for the given signals', async () => {
     process.setMaxListeners(1)
 
+    const listener = () => {}
+    process.on('HAPIPULSE', listener)
+
     const server = new Hapi.Server()
     await server.register({
       plugin: require('../lib'),
       options: {
-        signals: ['HAPIPULSE', 'HAPIPULSE']
+        signals: ['HAPIPULSE', 'HAPIPULSE', 'PULSING']
       }
     })
 
@@ -34,10 +37,9 @@ describe('server stop with custom signals:', () => {
 
     await server.start()
 
-    expect(process.getMaxListeners()).to.equal(2)
     expect(process.listenerCount('HAPIPULSE')).to.equal(2)
+    expect(process.listenerCount('PULSING')).to.equal(1)
 
-    // a stopped hapi server has a "started" timestamp of 0
     expect(server.info.started).to.not.equal(0)
 
     process.emit('HAPIPULSE')

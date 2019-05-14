@@ -1,10 +1,21 @@
 # Changelog
 
+## [2.3.0](https://github.com/futurestudio/hapi-pulse/compare/v2.2.1...v2.3.0) - 2019-05-14
+
+### Added
+- Remove duplicated event names (previously `hapi-pulse` would register shutdown listeners for each event, even for duplicates)
+
+### Updated
+- log info message when already in stopping phase (previously `hapi-pulse` waited for the server stop without telling the user that the stopping phase is already in progress)
+- bump dependencies
+
+
 ## [2.2.1](https://github.com/futurestudio/hapi-pulse/compare/v2.2.0...v2.2.1) - 2019-04-24
 
 ### Updated
 - updating to the scoped hapi dependencies
 - bump dependencies
+
 
 ## [2.2.0](https://github.com/futurestudio/hapi-pulse/compare/v2.1.2...v2.2.0) - 2019-02-18
 
