@@ -16,7 +16,7 @@
     "@hapi/joi": "~15.0.3"
   },
   "devDependencies": {
-    "@hapi/code": "~5.3.1",
+    "@hapi/code": "~6.0.0",
     "@hapi/hapi": "~18.3.1",
     "@hapi/hoek": "~8.1.0",
     "@hapi/lab": "~19.1.0",
