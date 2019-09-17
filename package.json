@@ -13,7 +13,7 @@
     }
   ],
   "dependencies": {
-    "@hapi/joi": "~16.0.0"
+    "@hapi/joi": "~16.1.0"
   },
   "devDependencies": {
     "@hapi/code": "~6.0.0",
