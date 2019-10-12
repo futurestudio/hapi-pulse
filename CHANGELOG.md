@@ -1,13 +1,15 @@
 # Changelog
 
-## [2.3.0](https://github.com/futurestudio/hapi-pulse/compare/v2.2.1...v2.3.0) - 2019-05-14
+## [2.3.0](https://github.com/futurestudio/hapi-pulse/compare/v2.2.1...v2.3.0) - 2019-10-12
 
 ### Added
+- use [Joi v16](https://github.com/hapijs/joi) to validate plugin options
 - Remove duplicated event names (previously `hapi-pulse` would register shutdown listeners for each event, even for duplicates)
 
 ### Updated
-- log info message when already in stopping phase (previously `hapi-pulse` waited for the server stop without telling the user that the stopping phase is already in progress)
 - bump dependencies
+- remove Node.js v11 from testing
+- log info message when already in stopping phase (previously `hapi-pulse` waited for the server stop without telling the user that the stopping phase is already in progress)
 
 
 ## [2.2.1](https://github.com/futurestudio/hapi-pulse/compare/v2.2.0...v2.2.1) - 2019-04-24
