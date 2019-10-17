@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.4.0](https://github.com/futurestudio/hapi-pulse/compare/v2.3.0...v2.4.0) - 2019-10-17
+
+### Added
+- basic TypeScript declarations in `lib/index.d.ts`
+
+
 ## [2.3.0](https://github.com/futurestudio/hapi-pulse/compare/v2.2.1...v2.3.0) - 2019-10-12
 
 ### Added
