@@ -12,7 +12,7 @@
   "devDependencies": {
     "@hapi/code": "~7.0.0",
     "@hapi/hapi": "~18.4.0",
-    "@hapi/hoek": "~8.3.1",
+    "@hapi/hoek": "~8.4.0",
     "@hapi/lab": "~21.0.0",
     "eslint": "~6.6.0",
     "eslint-config-standard": "~14.1.0",
