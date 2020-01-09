@@ -47,20 +47,23 @@ It uses hapi’s `server.stop()` method to close connections properly.
 
 
 ## Requirements
-> **hapi v17** and **Node.js v8 (or newer)**
+> **hapi v19 (or later)** and **Node.js v12 (or newer)**
 
-This plugin requires **hapi v17** (or later) and uses async/await which requires **Node.js v8 or newer**.
+This plugin requires **hapi v19** (or later) and **Node.js v12 or newer**.
+
+
+### Compatibility
+| Major Release | [hapi.js](https://github.com/hapijs/hapi) version | Node.js version |
+| --- | --- | --- |
+| `v3` | `>=19 @hapi/hapi` | `>=12` |
+| `v2` | `>=17 hapi` | `>=8` |
 
 
 ## Installation
 Add `hapi-pulse` as a dependency to your project:
 
 ```bash
-# NPM v5 users, this way is yours
 npm i hapi-pulse
-
-# you’re using NPM v4:
-npm i -S hapi-pulse
 ```
 
 

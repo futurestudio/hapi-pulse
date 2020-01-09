@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.0](https://github.com/futurestudio/hapi-pulse/compare/v2.4.0...v3.0.0) - 2020-xx-xx
+
+### Breaking Changes
+- require hapi v19
+- require Node.js v12
+
+
 ## [2.4.0](https://github.com/futurestudio/hapi-pulse/compare/v2.3.0...v2.4.0) - 2019-10-17
 
 ### Added
@@ -74,7 +81,6 @@
 
 ### Deleted
 - removed useless `.prettierignore` file
-
 
 ### Breaking Changes
 - `onSignal` becomes `postServerStop`: the method renaming makes it clear when the function gets called
