@@ -10,10 +10,10 @@
     "@hapi/joi": "~16.1.7"
   },
   "devDependencies": {
-    "@hapi/code": "~7.0.0",
+    "@hapi/code": "~8.0.1",
     "@hapi/hapi": "~18.4.0",
     "@hapi/hoek": "~9.0.0",
-    "@hapi/lab": "~21.0.0",
+    "@hapi/lab": "~22.0.1",
     "eslint": "~6.8.0",
     "eslint-config-standard": "~14.1.0",
     "eslint-plugin-import": "~2.18.2",
