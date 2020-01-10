@@ -55,7 +55,7 @@ This plugin requires **hapi v19** (or later) and **Node.js v12 or newer**.
 ### Compatibility
 | Major Release | [hapi.js](https://github.com/hapijs/hapi) version | Node.js version |
 | --- | --- | --- |
-| `v3` | `>=19 @hapi/hapi` | `>=12` |
+| `v3` | `>=17 hapi` | `>=12` |
 | `v2` | `>=17 hapi` | `>=8` |
 
 

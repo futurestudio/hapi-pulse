@@ -1,10 +1,10 @@
 # Changelog
 
-## [3.0.0](https://github.com/futurestudio/hapi-pulse/compare/v2.4.0...v3.0.0) - 2020-xx-xx
+## [3.0.0](https://github.com/futurestudio/hapi-pulse/compare/v2.4.0...v3.0.0) - 2020-01-10
 
 ### Breaking Changes
-- require hapi v19
 - require Node.js v12
+  - this change aligns with the hapi ecosystem requiring Node.js v12 with the release of hapi 19
 
 
 ## [2.4.0](https://github.com/futurestudio/hapi-pulse/compare/v2.3.0...v2.4.0) - 2019-10-17
