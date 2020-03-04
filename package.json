@@ -22,7 +22,7 @@
     "eslint-plugin-standard": "~4.0.1",
     "husky": "~4.2.1",
     "mock-stdio": "~1.0.3",
-    "sinon": "~8.1.0"
+    "sinon": "~9.0.0"
   },
   "engines": {
     "node": ">=12"
