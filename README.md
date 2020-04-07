@@ -20,7 +20,6 @@
     <a href="https://snyk.io/test/github/futurestudio/hapi-pulse"><img src="https://snyk.io/test/github/futurestudio/hapi-pulse/badge.svg" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/futurestudio/hapi-pulse" style="max-width:100%;"></a>
     <a href="https://www.npmjs.com/package/hapi-pulse"><img src="https://img.shields.io/npm/v/hapi-pulse.svg" alt="Latest Version"></a>
     <a href="https://www.npmjs.com/package/hapi-pulse"><img src="https://img.shields.io/npm/dm/hapi-pulse.svg" alt="Total downloads"></a>
-    <a href="https://greenkeeper.io/" rel="nofollow"><img src="https://badges.greenkeeper.io/futurestudio/hapi-pulse.svg" alt="Greenkeeper badge" data-canonical-src="https://badges.greenkeeper.io/futurestudio/hapi-pulse.svg" style="max-width:100%;"></a>
   </p>
   <p>
     <em>Follow <a href="http://twitter.com/marcuspoehls">@marcuspoehls</a> for updates!</em>
@@ -40,7 +39,7 @@ Join the <a href="https://futurestud.io/university">Future Studio University and
 ## Introduction
 A hapi plugin that gracefully stops the hapi server on `SIGINT` and `SIGTERM` and your custom signals.
 
-`hapi-pulse` works great with **PM2** and other Node.js process manager to accomplish zero-downtime deployments!
+`hapi-pulse` works great with [**PM2**](https://github.com/Unitech/pm2) and other Node.js process manager to accomplish zero-downtime deployments!
 
 This serves existing requests before closing the connection and stopping the hapi server process.
 It uses hapi’s `server.stop()` method to close connections properly.
