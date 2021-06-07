@@ -14,7 +14,7 @@
     "@hapi/hapi": "~20.1.0",
     "@hapi/hoek": "~9.2.0",
     "@hapi/lab": "~24.2.0",
-    "eslint": "~7.25.0",
+    "eslint": "~7.28.0",
     "eslint-config-standard": "~16.0.1",
     "eslint-plugin-import": "~2.22.0",
     "eslint-plugin-node": "~11.1.0",
