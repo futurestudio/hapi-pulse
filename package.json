@@ -10,19 +10,18 @@
     "joi": "~17.5.0"
   },
   "devDependencies": {
-    "@hapi/code": "~8.0.1",
-    "@hapi/hapi": "~20.2.0",
-    "@hapi/hoek": "~9.2.0",
+    "@hapi/code": "~8.0.5",
+    "@hapi/hapi": "~20.2.1",
+    "@hapi/hoek": "~9.2.1",
     "@hapi/lab": "~24.5.0",
     "eslint": "~7.32.0",
-    "eslint-config-standard": "~16.0.1",
-    "eslint-plugin-import": "~2.25.2",
+    "eslint-config-standard": "~16.0.3",
+    "eslint-plugin-import": "~2.25.4",
     "eslint-plugin-node": "~11.1.0",
     "eslint-plugin-promise": "~5.2.0",
-    "eslint-plugin-standard": "~5.0.0",
-    "husky": "~7.0.0",
+    "husky": "~7.0.4",
     "mock-stdio": "~1.0.3",
-    "sinon": "~12.0.0"
+    "sinon": "~12.0.1"
   },
   "engines": {
     "node": ">=12"
