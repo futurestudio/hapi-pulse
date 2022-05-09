@@ -19,7 +19,7 @@
     "eslint-plugin-import": "~2.26.0",
     "eslint-plugin-node": "~11.1.0",
     "eslint-plugin-promise": "~5.2.0",
-    "husky": "~7.0.4",
+    "husky": "~8.0.1",
     "mock-stdio": "~1.0.3",
     "sinon": "~13.0.0"
   },
