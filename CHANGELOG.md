@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.0.1](https://github.com/futurestudio/hapi-pulse/compare/v3.0.0...v3.0.1) - 2023-07-25
+
+### Updated
+- bump dependencies
+
+
 ## [3.0.0](https://github.com/futurestudio/hapi-pulse/compare/v2.4.0...v3.0.0) - 2020-01-10
 
 ### Breaking Changes
