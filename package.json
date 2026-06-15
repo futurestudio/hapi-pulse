@@ -7,7 +7,7 @@
     "url": "https://github.com/futurestudio/hapi-pulse/issues"
   },
   "dependencies": {
-    "joi": "~18.2.1"
+    "joi": "17.13.4"
   },
   "devDependencies": {
     "@hapi/code": "~9.0.3",
