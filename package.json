@@ -23,7 +23,7 @@
     "sinon": "~15.2.0"
   },
   "engines": {
-    "node": ">=12"
+    "node": ">=22"
   },
   "homepage": "https://github.com/futurestudio/hapi-pulse#readme",
   "keywords": [
