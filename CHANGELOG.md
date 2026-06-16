@@ -1,5 +1,14 @@
 # Changelog
 
+## [4.0.0](https://github.com/futurestudio/hapi-pulse/compare/v3.0.1...v4.0.0) - 2026-06-17
+
+### Updated
+- bump dependencies
+
+### Breaking Changes
+- require Node.js v22
+
+
 ## [3.0.1](https://github.com/futurestudio/hapi-pulse/compare/v3.0.0...v3.0.1) - 2023-07-25
 
 ### Updated
