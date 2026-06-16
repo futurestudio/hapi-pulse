@@ -48,6 +48,7 @@
   },
   "scripts": {
     "prepush": "npm test",
-    "test": "lab --assert @hapi/code --leaks --coverage --lint"
+    "lint": "eslint .",
+    "test": "lab --assert @hapi/code --leaks --coverage"
   }
 }
