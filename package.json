@@ -25,6 +25,9 @@
   "engines": {
     "node": ">=22"
   },
+  "files": [
+    "lib"
+  ],
   "homepage": "https://github.com/futurestudio/hapi-pulse#readme",
   "keywords": [
     "developer",
