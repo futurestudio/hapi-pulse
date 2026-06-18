@@ -1,6 +1,6 @@
 # Changelog
 
-## [4.0.0](https://github.com/futurestudio/hapi-pulse/compare/v3.0.1...v4.0.0) - 2026-06-17
+## [4.0.0](https://github.com/futurestudio/hapi-pulse/compare/v3.0.1...v4.0.0) - 2026-06-18
 
 ### Updated
 - bump dependencies
